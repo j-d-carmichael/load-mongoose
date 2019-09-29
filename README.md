@@ -1,5 +1,3 @@
-#openapi-nodegen-mockers
-
-Returns mock data for the openapi-nodegen package.
+# openapi-nodegen-mongoose-loader
 
 More documentation to follow...

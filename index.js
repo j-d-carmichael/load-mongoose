@@ -1,10 +1,10 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 /**
  * A config object should contain the rel. connections details for this env.
  * @param config Config object
  */
-export default (config) => {
+module.exports = (config) => {
   const additionalParams = config.mongoAdditionalParams ? ('?' + config.mongoAdditionalParams) : '';
   const { mongoDatabase, mongoHost, mongoPassword, mongoUser } = config;
   let connectionString;
