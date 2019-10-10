@@ -3,5 +3,10 @@ export default function (config: {
   mongoDatabase: string;
   mongoHost: string;
   mongoPassword: string;
+  mongoPort: number;
+  mongoOpts?: object;
   mongoUser: string;
+} & {
+  mongoOpts?: object;
+  mongoUri: string;
 }): void;

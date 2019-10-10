@@ -1,6 +1,6 @@
 {
   "name": "openapi-nodegen-mongoose-loader",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Loads a mongodb connection for mongoose",
   "main": "index.js",
   "repository": {
