@@ -5,9 +5,9 @@ const mongoose = require('mongoose')
  * @param config Config object
  */
 module.exports = (config) => {
-  let connectionString = ''
+  let connectionString
   if (config.mongoUri) {
-    connectionString += `:${mongoPort}/${mongoDatabase}${additionalParams}`
+    connectionString = config.mongoUri
   } else {
     const additionalParams = config.mongoAdditionalParams ? ('?' + config.mongoAdditionalParams) : ''
     const { mongoDatabase, mongoHost, mongoPassword, mongoPort, mongoUser } = config
@@ -33,6 +33,7 @@ module.exports = (config) => {
     console.error('Mongoose connection error:', e, 'DatabaseLoader')
   })
   mongoose.connection.once('open', () => {
-    console.info('Mongoose connected to: ' + `${mongoHost}/${mongoDatabase}`, 'DatabaseLoader')
+    const method = config.mongoUri ? 'The connection string provided' : 'The configuration options provided'
+    console.info('Mongoose connected via: ' + method)
   })
 }
