@@ -27,7 +27,7 @@ Loading with full connection uri:
 ```js
 import mongoLoader from 'openapi-nodegen-mongoose-loader';
 
-await mongoLoader({
+mongoLoader({
   mongoOpts: {
     useCreateIndex: true
   },
