@@ -4,11 +4,10 @@ const mongoose = require('mongoose')
  * A config object should contain the rel. connections details for this env.
  * @param config Config object
  */
-module.exports = (config) => {
-  let connectionString
-  if (config.mongoUri) {
-    connectionString = config.mongoUri
-  } else {
+module.exports = (config) => new Promise((resolve, reject) => {
+  let connectionString = config.mongoUri
+
+  if (!connectionString) {
     const additionalParams = config.mongoAdditionalParams ? ('?' + config.mongoAdditionalParams) : ''
     const { mongoDatabase, mongoHost, mongoPassword, mongoPort, mongoUser } = config
 
@@ -17,6 +16,7 @@ module.exports = (config) => {
     } else {
       connectionString = `mongodb://${mongoHost}`
     }
+
     connectionString += `:${mongoPort}/${mongoDatabase}${additionalParams}`
   }
 
@@ -28,12 +28,17 @@ module.exports = (config) => {
     )
   ).catch((e) => {
     console.error('Mongoose connection error:', e, 'DatabaseLoader')
+    reject(e)
   })
+
   mongoose.connection.on('error', (e) => {
     console.error('Mongoose connection error:', e, 'DatabaseLoader')
+    reject(e)
   })
+
   mongoose.connection.once('open', () => {
     const method = config.mongoUri ? 'The connection string provided' : 'The configuration options provided'
     console.info('Mongoose connected via: ' + method)
+    resolve()
   })
-}
+})
