@@ -7,11 +7,11 @@ type Config = ({
       mongoAdditionalParams?: string;
       mongoDatabase: string;
       mongoHost: string;
+      mongoUser: string;
       mongoPassword: string;
       mongoPort: number;
       // https://mongoosejs.com/docs/connections.html#options
       mongoOpts?: object;
-      mongoUser: string;
 });
 
-export default function (config: Config): Promise<any>;
+export default function (config: Config): Promise<void>;

@@ -14,6 +14,12 @@ mongoLoader({
   mongoPassword: 'password',
   mongoPort: 27017,
   mongoUser: 'username',
+})
+.then(() =>{
+  // do something safe in the knowledge there is a connection to the db
+})
+.catch((e: any) => {
+  // Do something with the error
 });
 ```
 
@@ -21,11 +27,17 @@ Loading with full connection uri:
 ```js
 import mongoLoader from 'openapi-nodegen-mongoose-loader';
 
-mongoLoader({
+await mongoLoader({
   mongoOpts: {
     useCreateIndex: true
   },
   mongoUri: 'someurlstring',
+})
+.then(() =>{
+  // do something safe in the knowledge there is a connection to the db
+})
+.catch((e: any) => {
+  // Do something with the error
 });
 ```
 
