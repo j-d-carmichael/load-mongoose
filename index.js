@@ -23,7 +23,11 @@ module.exports = (config) => new Promise((resolve, reject) => {
   mongoose.connect(
     connectionString,
     Object.assign(
-      { useNewUrlParser: true },
+      {
+        useCreateIndex: true,
+        useFindAndModify: false,
+        useNewUrlParser: true
+      },
       config.mongoOpts || {}
     )
   ).catch((e) => {
