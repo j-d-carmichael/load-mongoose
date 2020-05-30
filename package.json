@@ -1,6 +1,6 @@
 {
   "name": "openapi-nodegen-mongoose-loader",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Loads a mongodb connection for mongoose",
   "main": "index.js",
   "repository": {
@@ -8,7 +8,7 @@
     "url": "https://github.com/johndcarmichael/openapi-nodegen-mongoose-loader"
   },
   "peerDependencies": {
-    "mongoose": "^5.8.4"
+    "mongoose": "^5.9.16"
   },
   "author": "John D Carmichael",
   "license": "MIT"
