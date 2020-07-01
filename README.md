@@ -1,5 +1,13 @@
 # openapi-nodegen-mongoose-loader
 
+The established connection will use the default options, these can be overridden with mongoOpts:
+```
+useCreateIndex: true,
+useFindAndModify: false,
+useNewUrlParser: true,
+useUnifiedTopology: true
+```
+
 Loading with independent params:
 ```js
 import mongoLoader from 'openapi-nodegen-mongoose-loader';
@@ -9,7 +17,7 @@ mongoLoader({
   mongoDatabase: 'myapp',
   mongoHost: 'localhost',
   mongoOpts: {
-    useCreateIndex: true
+    useCreateIndex: false
   },
   mongoPassword: 'password',
   mongoPort: 27017,
@@ -29,7 +37,7 @@ import mongoLoader from 'openapi-nodegen-mongoose-loader';
 
 mongoLoader({
   mongoOpts: {
-    useCreateIndex: true
+    useCreateIndex: false
   },
   mongoUri: 'someurlstring',
 })

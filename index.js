@@ -26,7 +26,8 @@ module.exports = (config) => new Promise((resolve, reject) => {
       {
         useCreateIndex: true,
         useFindAndModify: false,
-        useNewUrlParser: true
+        useNewUrlParser: true,
+        useUnifiedTopology: true
       },
       config.mongoOpts || {}
     )
