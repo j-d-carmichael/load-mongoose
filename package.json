@@ -1,15 +1,28 @@
 {
   "name": "openapi-nodegen-mongoose-loader",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Loads a mongodb connection for mongoose",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "build": "ttsc -p ."
+  },
+  "files": [
+    "lib",
+    "package.json",
+    "README"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/johndcarmichael/openapi-nodegen-mongoose-loader"
   },
-  "peerDependencies": {
-    "mongoose": "^5.9.16"
-  },
   "author": "John D Carmichael",
-  "license": "MIT"
+  "license": "MIT",
+  "peerDependencies": {
+    "mongoose": "^5.9.16 || ^6.*"
+  },
+  "devDependencies": {
+    "ttypescript": "^1.5.12",
+    "typescript": "^4.5.2"
+  }
 }
