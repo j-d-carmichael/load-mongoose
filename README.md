@@ -49,4 +49,4 @@ loadMongoose({
 });
 ```
 
-See the [index.d.ts](https://github.com/johndcarmichael/load-mongoose/blob/master/index.d.ts) file for type definition mongoLoader 1st argument.
+See the [index.d.ts](https://github.com/j-d-carmichael/load-mongoose/blob/master/lib/index.d.ts) file for type definition mongoLoader 1st argument.

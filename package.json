@@ -1,6 +1,6 @@
 {
   "name": "load-mongoose",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "Loads a mongodb connection for mongoose..,",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/johndcarmichael/load-mongoose"
+    "url": "https://github.com/j-d-carmichael/load-mongoose"
   },
   "author": "John D Carmichael",
   "license": "MIT",
