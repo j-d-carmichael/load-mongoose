@@ -19,7 +19,7 @@
   "author": "John D Carmichael",
   "license": "MIT",
   "peerDependencies": {
-    "mongoose": "^6.0.13"
+    "mongoose": "^5.9.16 || ^6.*"
   },
   "devDependencies": {
     "ttypescript": "^1.5.12",
