@@ -1,6 +1,6 @@
-# openapi-nodegen-mongoose-loader
+# load-mongoose
 
-The established connection will use the default options, these can be overridden with mongoOpts:
+The established connection will use the default options (for mongoose 5.9), these can be overridden with mongoOpts:
 ```
 useCreateIndex: true,
 useFindAndModify: false,
@@ -10,7 +10,7 @@ useUnifiedTopology: true
 
 Loading with independent params:
 ```js
-import mongoLoader from 'openapi-nodegen-mongoose-loader';
+import loadMongoose from 'load-mongoose';
 
 mongoLoader({
   mongoAdditionalParams: 'authSource=admin',
@@ -33,9 +33,9 @@ mongoLoader({
 
 Loading with full connection uri:
 ```js
-import mongoLoader from 'openapi-nodegen-mongoose-loader';
+import loadMongoose from 'load-mongoose';
 
-mongoLoader({
+loadMongoose({
   mongoOpts: {
     useCreateIndex: false
   },
@@ -49,4 +49,4 @@ mongoLoader({
 });
 ```
 
-See the [index.d.ts](https://github.com/johndcarmichael/openapi-nodegen-mongoose-loader/blob/master/index.d.ts) file for type definition mongoLoader 1st argument.
+See the [index.d.ts](https://github.com/johndcarmichael/load-mongoose/blob/master/index.d.ts) file for type definition mongoLoader 1st argument.
