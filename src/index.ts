@@ -27,21 +27,16 @@ const mongooseLoader = (config: Config): Promise<void> => new Promise((resolve, 
   let connectionString = config.mongoUri;
 
   if (!connectionString) {
-    const additionalParams = config.mongoAdditionalParams
-      ? ('?' + config.mongoAdditionalParams)
-      : '';
-
+    const additionalParams = config.mongoAdditionalParams ? `?${config.mongoAdditionalParams}` : '';
     const { mongoDatabase, mongoHost, mongoPassword, mongoPort, mongoUser } = config;
-
     if (mongoUser) {
       connectionString = `mongodb://${mongoUser}:${mongoPassword}@${mongoHost}`;
     } else {
       connectionString = `mongodb://${mongoHost}`;
     }
-
-    connectionString += `:${mongoPort}/${mongoDatabase}${additionalParams}`;
+    const portString = mongoPort ? `:${mongoPort}` : '';
+    connectionString += `${portString}/${mongoDatabase}${additionalParams}`;
   }
-
   const options: ConnectOptions = {
     ...DEFAULT_OPTIONS,
     ...(config.mongoOpts || {})
