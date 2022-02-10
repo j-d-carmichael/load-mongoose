@@ -1,11 +1,12 @@
 {
   "name": "load-mongoose",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Loads a mongodb connection for mongoose..,",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
-    "build": "ttsc -p ."
+    "build": "ttsc -p .",
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "lib",

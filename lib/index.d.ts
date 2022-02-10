@@ -5,6 +5,7 @@ export declare type Config = {
     mongoHost?: string;
     mongoPassword?: string;
     mongoPort?: string;
+    mongoProtocol?: string;
     mongoUri?: string;
     mongoUser?: string;
     mongoOpts?: ConnectOptions;
