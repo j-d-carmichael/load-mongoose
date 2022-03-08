@@ -1,3 +1,8 @@
+## 2.1.0 (2021-03-08)
+
+### Feature
+* extract the connection uri function, see the readme
+
 ## 2.0.0 (2021-11-24)
 
 ### Breaking change
