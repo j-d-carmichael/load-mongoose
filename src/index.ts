@@ -24,21 +24,29 @@ const DEFAULT_OPTIONS = mongoose.version.startsWith('6.')
     useUnifiedTopology: true
   };
 
+export const calculateConnectionUri = (config: Config): string => {
+  let connectionString;
+  const additionalParams = config.mongoAdditionalParams ? `?${config.mongoAdditionalParams}` : '';
+  const { mongoDatabase, mongoHost, mongoPassword, mongoPort, mongoUser, mongoProtocol } = config;
+  const connectionProtocol = mongoProtocol || 'mongodb+srv';
+  if (mongoUser) {
+    connectionString = `${connectionProtocol}://${mongoUser}:${mongoPassword}@${mongoHost}`;
+  } else {
+    connectionString = `${connectionProtocol}://${mongoHost}`;
+  }
+  const portString = mongoPort ? `:${mongoPort}` : '';
+  connectionString += `${portString}/${mongoDatabase}${additionalParams}`;
+
+  return connectionString;
+};
+
 const mongooseLoader = (config: Config): Promise<void> => new Promise((resolve, reject) => {
   let connectionString = config.mongoUri;
 
   if (!connectionString) {
-    const additionalParams = config.mongoAdditionalParams ? `?${config.mongoAdditionalParams}` : '';
-    const { mongoDatabase, mongoHost, mongoPassword, mongoPort, mongoUser, mongoProtocol } = config;
-    const connectionProtocol = mongoProtocol || 'mongodb+srv'
-    if (mongoUser) {
-      connectionString = `${connectionProtocol}://${mongoUser}:${mongoPassword}@${mongoHost}`;
-    } else {
-      connectionString = `${connectionProtocol}://${mongoHost}`;
-    }
-    const portString = mongoPort ? `:${mongoPort}` : '';
-    connectionString += `${portString}/${mongoDatabase}${additionalParams}`;
+    connectionString = calculateConnectionUri(config);
   }
+
   const options: ConnectOptions = {
     ...DEFAULT_OPTIONS,
     ...(config.mongoOpts || {})

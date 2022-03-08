@@ -10,5 +10,6 @@ export declare type Config = {
     mongoUser?: string;
     mongoOpts?: ConnectOptions;
 };
+export declare const calculateConnectionUri: (config: Config) => string;
 declare const mongooseLoader: (config: Config) => Promise<void>;
 export default mongooseLoader;
