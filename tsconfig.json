@@ -11,7 +11,7 @@
     "outDir": "./lib",
     "baseUrl": ".",
     "resolveJsonModule": true,
-    "importHelpers": true,
+    "importHelpers": false,
     "allowSyntheticDefaultImports": true
   },
   "include": [

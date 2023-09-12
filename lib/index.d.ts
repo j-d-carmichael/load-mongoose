@@ -1,5 +1,5 @@
 import { ConnectOptions } from 'mongoose';
-export declare type Config = {
+export type Config = {
     mongoAdditionalParams?: string;
     mongoDatabase?: string;
     mongoHost?: string;

@@ -12,17 +12,10 @@ export type Config = {
   mongoOpts?: ConnectOptions;
 };
 
-const DEFAULT_OPTIONS = mongoose.version.startsWith('6.')
-  ? {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  }
-  : {
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  };
+const DEFAULT_OPTIONS = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+};
 
 export const calculateConnectionUri = (config: Config): string => {
   let connectionString;
@@ -47,10 +40,7 @@ const mongooseLoader = (config: Config): Promise<void> => new Promise((resolve, 
     connectionString = calculateConnectionUri(config);
   }
 
-  const options: ConnectOptions = {
-    ...DEFAULT_OPTIONS,
-    ...(config.mongoOpts || {})
-  };
+  const options: ConnectOptions = config.mongoOpts || {};
 
   mongoose
     .connect(connectionString, options)

@@ -1,3 +1,9 @@
+## 3.0.0 (2023-09-12)
+
+### Breaking change
+* Now requires mongoose version ^7.*
+
+
 ## 2.1.0 (2021-03-08)
 
 ### Feature
