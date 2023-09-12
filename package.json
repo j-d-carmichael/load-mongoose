@@ -1,6 +1,6 @@
 {
   "name": "load-mongoose",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Loads a mongodb connection for mongoose..,",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",

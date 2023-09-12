@@ -1,3 +1,9 @@
+## 3.1.0 (2023-09-12)
+
+### Feature
+* Now returns the mongoose connection object, see the readme examples of the promise resolve.
+
+
 ## 3.0.0 (2023-09-12)
 
 ### Breaking change

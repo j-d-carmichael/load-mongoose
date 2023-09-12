@@ -1,4 +1,4 @@
-import mongoose, { ConnectOptions } from 'mongoose';
+import mongoose, { Connection, ConnectOptions } from 'mongoose';
 
 export type Config = {
   mongoAdditionalParams?: string;
@@ -33,7 +33,7 @@ export const calculateConnectionUri = (config: Config): string => {
   return connectionString;
 };
 
-const mongooseLoader = (config: Config): Promise<void> => new Promise((resolve, reject) => {
+const mongooseLoader = (config: Config): Promise<Connection> => new Promise((resolve, reject) => {
   let connectionString = config.mongoUri;
 
   if (!connectionString) {
@@ -60,7 +60,8 @@ const mongooseLoader = (config: Config): Promise<void> => new Promise((resolve, 
       : 'The configuration options provided';
 
     console.info('Mongoose connected via: ' + method);
-    resolve();
+
+    resolve(mongoose.connection);
   });
 });
 

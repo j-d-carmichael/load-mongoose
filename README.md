@@ -11,6 +11,7 @@ useUnifiedTopology: true
 Loading with independent params:
 ```js
 import loadMongoose from 'load-mongoose';
+import { Connection } from 'mongoose';
 
 mongoLoader({
   mongoAdditionalParams: 'authSource=admin',
@@ -23,7 +24,7 @@ mongoLoader({
   mongoPort: 27017,
   mongoUser: 'username',
 })
-.then(() =>{
+.then((connection: Connection) =>{
   // do something safe in the knowledge there is a connection to the db
 })
 .catch((e: any) => {
@@ -34,6 +35,7 @@ mongoLoader({
 Loading with full connection uri:
 ```js
 import loadMongoose from 'load-mongoose';
+import { Connection } from 'mongoose';
 
 loadMongoose({
   mongoOpts: {
@@ -41,7 +43,7 @@ loadMongoose({
   },
   mongoUri: 'someurlstring',
 })
-.then(() =>{
+.then((connection: Connection) =>{
   // do something safe in the knowledge there is a connection to the db
 })
 .catch((e: any) => {
