@@ -1,4 +1,4 @@
-import { ConnectOptions } from 'mongoose';
+import { Connection, ConnectOptions } from 'mongoose';
 export type Config = {
     mongoAdditionalParams?: string;
     mongoDatabase?: string;
@@ -11,5 +11,5 @@ export type Config = {
     mongoOpts?: ConnectOptions;
 };
 export declare const calculateConnectionUri: (config: Config) => string;
-declare const mongooseLoader: (config: Config) => Promise<void>;
+declare const mongooseLoader: (config: Config) => Promise<Connection>;
 export default mongooseLoader;

@@ -1,3 +1,9 @@
+## 3.2.0 (2023-09-12)
+
+### Feature
+* Now supports mongoose 7 and 8
+
+
 ## 3.1.0 (2023-09-12)
 
 ### Feature

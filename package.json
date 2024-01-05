@@ -1,6 +1,6 @@
 {
   "name": "load-mongoose",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Loads a mongodb connection for mongoose..,",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -21,7 +21,7 @@
   "author": "John D Carmichael",
   "license": "MIT",
   "peerDependencies": {
-    "mongoose": "^7.*"
+    "mongoose": "^7 || ^8"
   },
   "devDependencies": {
     "@types/jest": "^29.5.4",
