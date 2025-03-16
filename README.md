@@ -1,5 +1,9 @@
 # load-mongoose
 
+A simple and convient wrapper for connecting to mongoose.
+
+## Details
+
 The established connection will use the default options (for mongoose 5.9), these can be overridden with mongoOpts:
 ```
 useCreateIndex: true,
