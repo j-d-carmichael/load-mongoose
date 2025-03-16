@@ -1,6 +1,6 @@
 # load-mongoose
 
-A simple and convient wrapper for connecting to mongoose.
+A simple wrapper for connecting to mongo via mongoose.
 
 ## Details
 
