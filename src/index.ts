@@ -12,11 +12,6 @@ export type Config = {
   mongoOpts?: ConnectOptions;
 };
 
-const DEFAULT_OPTIONS = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-};
-
 export const calculateConnectionUri = (config: Config): string => {
   let connectionString;
   const additionalParams = config.mongoAdditionalParams ? `?${config.mongoAdditionalParams}` : '';
