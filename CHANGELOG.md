@@ -1,7 +1,6 @@
-## 3.3.0 (2026-04-03)
+## 4.0.0 (2026-04-03)
 
-### Feature
-* Now supports mongoose 7 to 9
+- Breaking - no longer supports mongoose 7
 
 ## 3.2.0 (2023-09-12)
 
